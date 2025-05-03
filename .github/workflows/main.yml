@@ -2,8 +2,8 @@ name: Log Time Job
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Runs every 5 minutes
-  workflow_dispatch:  # Manual trigger option
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
 jobs:
   log_time:
