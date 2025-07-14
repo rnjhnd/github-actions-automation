@@ -1,1 +1,1 @@
-# AutomatingATaskUsingGitHubActions
+# Automating A Task Using GitHub Actions
