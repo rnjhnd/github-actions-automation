@@ -20,10 +20,12 @@ This project automatically logs GitHub user activity with timestamps and provide
 ## 📁 Project Structure
 ```
 github-actions-automation/
-├── count_logs.sh       # Script to count log entries
-├── log_time.sh         # Script to log timestamp and user
-├── log.txt             # Activity log file (auto-generated)
-├── log_count.txt       # Count summary (auto-generated)
+├── scripts/            # Shell scripts directory
+│   ├── count_logs.sh   # Script to count log entries
+│   └── log_time.sh     # Script to log timestamp and user
+├── data/               # Data files directory
+│   ├── log.txt         # Activity log file (auto-generated)
+│   └── log_count.txt   # Count summary (auto-generated)
 └── README.md           # Project documentation and setup guide
 ```
 
@@ -39,10 +41,10 @@ github-actions-automation/
 ### Running Locally
 ```bash
 # Log current time and user
-./log_time.sh
+./scripts/log_time.sh
 
 # Count log entries
-./count_logs.sh
+./scripts/count_logs.sh
 ```
 
 ### Prerequisites
@@ -96,14 +98,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Log Activity
-        run: ./log_time.sh
+        run: ./scripts/log_time.sh
       - name: Count Logs
-        run: ./count_logs.sh
+        run: ./scripts/count_logs.sh
       - name: Commit Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add log.txt log_count.txt
+          git add data/log.txt data/log_count.txt
           git commit -m "Update logs" || exit 0
           git push
 ```

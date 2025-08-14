@@ -18,18 +18,18 @@ jobs:
 
       - name: Run logging script
         run: |
-          chmod +x log_time.sh
-          ./log_time.sh
+          chmod +x scripts/log_time.sh
+          ./scripts/log_time.sh
 
       - name: Run log count script
         run: |
-          chmod +x count_logs.sh
-          ./count_logs.sh
+          chmod +x scripts/count_logs.sh
+          ./scripts/count_logs.sh
 
       - name: Commit and push changes
         run: |
           git config --global user.name "ArenJohnD"
           git config --global user.email "esoen.arenjohn@gmail.com"
-          git add log.txt log_count.txt
+          git add data/log.txt data/log_count.txt
           git commit -m "Update log and count files" || echo "No changes to commit"
           git push
