@@ -20,11 +20,11 @@ This project automatically logs GitHub user activity with timestamps and provide
 ## 📁 Project Structure
 ```
 github-actions-automation/
-├── README.md           # This file
 ├── count_logs.sh       # Script to count log entries
 ├── log_time.sh         # Script to log timestamp and user
 ├── log.txt             # Activity log file (auto-generated)
-└── log_count.txt       # Count summary (auto-generated)
+├── log_count.txt       # Count summary (auto-generated)
+└── README.md           # Project documentation and setup guide
 ```
 
 ## 🛠️ Installation and Setup
