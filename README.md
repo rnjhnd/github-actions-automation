@@ -2,7 +2,7 @@
 
 A simple automation project that tracks GitHub user activity using GitHub Actions workflows. This project demonstrates how to create automated logging and counting systems that run on GitHub's infrastructure.
 
-## 🎯 Purpose
+## 📋 Overview
 
 This project automatically logs GitHub user activity with timestamps and provides a count of all recorded activities. It's useful for:
 - Tracking user engagement over time
@@ -10,8 +10,14 @@ This project automatically logs GitHub user activity with timestamps and provide
 - Demonstrating GitHub Actions automation capabilities
 - Learning about shell scripting in CI/CD environments
 
-## 📁 Project Structure
+## 🚀 Features
 
+- **Automated Logging**: The `log_time.sh` script runs automatically via GitHub Actions
+- **User Detection**: Automatically identifies the GitHub user from the Actions context
+- **Timestamp Recording**: Each entry includes the exact date and time of execution
+- **Activity Counting**: The `count_logs.sh` script provides a summary of all activities
+
+## 📁 Project Structure
 ```
 github-actions-automation/
 ├── README.md           # This file
@@ -19,42 +25,6 @@ github-actions-automation/
 ├── log_time.sh         # Script to log timestamp and user
 ├── log.txt             # Activity log file (auto-generated)
 └── log_count.txt       # Count summary (auto-generated)
-```
-
-## 🔧 Components
-
-### `log_time.sh`
-- Records the current timestamp and GitHub username
-- Appends entries to `log.txt`
-- Automatically detects the GitHub user from the Actions context
-
-### `count_logs.sh`
-- Counts the total number of lines in the log file
-- Outputs the count to `log_count.txt`
-- Provides a summary of recorded activities
-
-### Generated Files
-- **`log.txt`**: Contains timestamped entries of user activity
-- **`log_count.txt`**: Shows the total number of recorded updates
-
-## 🚀 How It Works
-
-1. **Automated Logging**: The `log_time.sh` script runs automatically via GitHub Actions
-2. **User Detection**: Automatically identifies the GitHub user from the Actions context
-3. **Timestamp Recording**: Each entry includes the exact date and time of execution
-4. **Activity Counting**: The `count_logs.sh` script provides a summary of all activities
-
-## 📊 Sample Output
-
-### Log Entry Format
-```
-[Sat May  3 12:54:09 UTC 2025] - GitHub User: ArenJohnD
-[Sat May  3 13:40:00 UTC 2025] - GitHub User: ArenJohnD
-```
-
-### Count Summary
-```
-There have been 4056 updates recorded in the log file.
 ```
 
 ## 🛠️ Installation and Setup
@@ -78,6 +48,35 @@ There have been 4056 updates recorded in the log file.
 ### Prerequisites
 - GitHub repository with GitHub Actions enabled
 - Basic understanding of shell scripting
+
+## 🔧 Components
+
+### `log_time.sh`
+- Records the current timestamp and GitHub username
+- Appends entries to `log.txt`
+- Automatically detects the GitHub user from the Actions context
+
+### `count_logs.sh`
+- Counts the total number of lines in the log file
+- Outputs the count to `log_count.txt`
+- Provides a summary of recorded activities
+
+### Generated Files
+- **`log.txt`**: Contains timestamped entries of user activity
+- **`log_count.txt`**: Shows the total number of recorded updates
+
+## 📊 Sample Output
+
+### Log Entry Format
+```
+[Sat May  3 12:54:09 UTC 2025] - GitHub User: ArenJohnD
+[Sat May  3 13:40:00 UTC 2025] - GitHub User: ArenJohnD
+```
+
+### Count Summary
+```
+There have been 4056 updates recorded in the log file.
+```
 
 ## 🔄 GitHub Actions Integration
 
@@ -109,7 +108,7 @@ jobs:
           git push
 ```
 
-## 📈 Use Cases
+## 🎯 Use Cases
 
 - **Activity Monitoring**: Track when users interact with your repository
 - **Analytics**: Analyze user engagement patterns over time
